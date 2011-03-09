@@ -1,8 +1,28 @@
 body {background-color:#E3EBB7}
-h1 {font:italic 5em Georgia;text-align:center;color:#333}
+
+/* Text */
+h1 {font:italic 5.2em Georgia;text-align:center;color:#333}
 h1 span {font-style:normal;color:#573369;}
+h2 {font-size:2.3em;}
+p {font-size: 1.1em;}
+a {color:# }
+
+/* LaunchRock shiz */
 #container {margin:0 auto;width:380px;}
-#lrcontent #submit {background-color:#105F73 !important;}
+#makea {display:none;}
 
 
-.width {width:980px;margin:0 auto;}
+/* Layout */
+.width {width:980px;margin:0 auto;font-family: "anonymous-pro-1","anonymous-pro-2";}
+
+/* Header */
+#header {}
+
+
+/* pubtxt topic page */
+.topic-page {}
+.pubtxt .map {border:1px solid red;}
+.pubtxt .chats {}
+
+
+
