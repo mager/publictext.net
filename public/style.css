@@ -1,11 +1,11 @@
-body {background-color:#E3EBB7}
+body {background-color:#E3EBB7;color:#333;margin:0;padding:0;}
 
 /* Text */
-h1 {font:italic 5.2em Georgia;text-align:center;color:#333}
+h1 {font:italic 5.2em Georgia;text-align:center;color:#333;margin:10px;}
 h1 span {font-style:normal;color:#573369;}
-h2 {font-size:2.3em;}
+h2 {font-size:2.2em;}
 p {font-size: 1.1em;}
-a {color:# }
+a {color:#573369;}
 
 /* LaunchRock shiz */
 #container {margin:0 auto;width:380px;}
@@ -16,13 +16,16 @@ a {color:# }
 .width {width:980px;margin:0 auto;font-family: "anonymous-pro-1","anonymous-pro-2";}
 
 /* Header */
-#header {}
 
 
 /* pubtxt topic page */
-.topic-page {}
-.pubtxt .map {border:1px solid red;}
-.pubtxt .chats {}
+.topic-page .logo {text-align:left;font-size:3em;}
+.topic-page .logo a {text-decoration:none;color:#000;}
+.topic-page .logo a span {color:#5733690;}
+.topic-page #header {background-color:#7ED19B;border-top:4px solid #358A5C;}
+.topic-page .pubtxt {text-align:center;}
+.topic-page #map {border:1px solid red;}
+.topic-page #chats {border:1px solid red;}
 
 
 
