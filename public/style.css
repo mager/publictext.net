@@ -1,5 +1,5 @@
 body {background-color:#F7F3B2}
-h1 {font:italic 5em Georgia;text-align:center;color:#ccc}
+h1 {font:italic 5em Georgia;text-align:center;color:#333}
 h1 span {font-style:normal;color:#105F73;}
 #container {margin:0 auto;width:380px;}
 #description {display:none;}
