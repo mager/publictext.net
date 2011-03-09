@@ -1,6 +1,8 @@
-body {background-color:#F7F3B2}
+body {background-color:#E3EBB7}
 h1 {font:italic 5em Georgia;text-align:center;color:#333}
-h1 span {font-style:normal;color:#105F73;}
+h1 span {font-style:normal;color:#573369;}
 #container {margin:0 auto;width:380px;}
-#description {display:none;}
 #lrcontent #submit {background-color:#105F73 !important;}
+
+
+.width {width:980px;margin:0 auto;}
