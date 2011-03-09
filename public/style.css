@@ -1,0 +1,5 @@
+h1 {font:italic 5em Georgia;text-align:center;color:#212121}
+h1 span {font-style:normal;color:#CC5404}
+#container {margin:0 auto;width:380px;}
+#description {display:none;}
+#lrcontent #submit {background-color:#105F73 !important;}
