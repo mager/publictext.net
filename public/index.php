@@ -4,7 +4,7 @@
 <style media="screen" type="text/css">
     @import "style.css";
 </style>
-<title>PublicText - Public, group chat about compelling topics limited to your specific neighborhood or zip code</title>
+<title>PublicText - Public, group chat about compelling topics limited to your specific neighborhood or zip code.</title>
 <link rel="stylesheet" href="http://launchrock.com/api/lr.api.0.2.css">
 <script src="http://launchrock.com/api/lr.api.0.2.js"></script>
 
@@ -65,12 +65,19 @@ showTagLine: true,
 showHeaderText: true,
 showParagraphText: true,
 showStats: true,
-showShareButtons: false,
+showShareButtons: true,
 showFooterLinks: true    });
 
 
 });
 
     </script>
+<div class="follow-us">
+<p><strike>Built</strike> Prototyped by <a href="http://twitter.com/mager">@mager</a>, <a href="http://twitter.com/rahims" target="_blank">@rahims</a>, <a href="http://twitter.com/dtemple" target="_blank">@dtemple</a>, <a href="http://twitter.com/kekatie" target="_blank">@kekatie</a>, <a href="http://twitter.com/cinzano" target="_blank">@cinzano</a>, <a href="http://twitter.com/lksugarman" target="_blank">@lksugarman</a>.
+</p>
+<p>Powered by <a href="http://www.cabanaapp.com">Cabana</a>.</p>
+</p>
+</div>
+
 </body>
 </html>

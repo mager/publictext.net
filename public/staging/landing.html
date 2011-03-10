@@ -1,65 +1,64 @@
 <!DOCTYPE html> 
-<html> 
-	<head> 
-<style media="screen" type="text/css"> 
-    @import "../style.css";
-</style> 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-		<script src="http://cdn.simplegeo.com/js/1.2/simplegeo.context.jq.min.js"></script>
-	</head>
+<html>
+  <head>
+    <style media="screen" type="text/css"> 
+      @import "../style.css";
+    </style> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script src="http://cdn.simplegeo.com/js/1.2/simplegeo.context.jq.min.js"></script>
+  </head>
 
-	<body> 
-		<script type="text/javascript"> 
-			var client = new simplegeo.ContextClient('xJGtLQqpHmyA3NxLRUFmqTQFU9FnLkRZ');
+<body class="landing"> 
+	
+  <script type="text/javascript"> 
+    var client = new simplegeo.ContextClient('xJGtLQqpHmyA3NxLRUFmqTQFU9FnLkRZ');
 
-			$(document).ready(function() {
-				client.getLocationFromIP(function(err, position) {
-					centerMap(err, position);
-					client.watchLocationFromBrowser({enableHighAccuracy: true}, centerMap);
-				});
+	$(document).ready(function() {
+	  client.getLocationFromIP(function(err, position) {
+        centerMap(err, position);
+        client.watchLocationFromBrowser({enableHighAccuracy: false}, centerMap);
+      });
 				 
-				function centerMap(err, position) {
-					if (err) { 
-						$("#status").text("Unable to load location info: " + err);
-					} else {
-						var coords = position.coords;
-						$("#lat").val(coords.latitude);
-						$("#long").val(coords.longitude);
-						client.getContext(coords.latitude, coords.longitude, hood);
-					}
-				}
+      function centerMap(err, position) {
+        if (err) { 
+          $("#status").text("Unable to load location info: " + err);
+        } else {
+          var coords = position.coords;
+          $("#lat").val(coords.latitude);
+          $("#long").val(coords.longitude);
+          client.getContext(coords.latitude, coords.longitude, hood);
+      }
+    }
 				
-				function hood(err, data) {
-					if (err) {
-						$("#status").text("Unable to load location info: " + err);
-					}
-					else {
-var featureMap = {};
+    function hood(err, data) {
+      if (err) {
+        $("#status").text("Unable to load location info: " + err);
+      } else {
+        var featureMap = {};
+        $.each(data.features, function(i, feature) { featureMap[feature.classifiers[0].category] = feature.name })
+        var feature = featureMap['Neighborhood'] || featureMap['Postal Code'];
+        var city = featureMap['Municipal'];
+        var state = featureMap['Subnational'];
+        $("#status").text(feature + ", " + city + ", " + state);
+      }
+    }
+  });
 
-						$.each(data.features, function(i, feature) { featureMap[feature.classifiers[0].category] = feature.name })
+</script> 
 
-						var feature = featureMap['Neighborhood'] || featureMap['Postal Code']
+<div class="width">
+<h1>Public<span>Text</span></h1>
 
-						var state = featureMap['Province'];
-						console.log(featureMap);
+<form method="get" action="/">
+  <label for="topic">What's your fancy?</label>
+  <input type="text" name="topic" id="topic" size="25" maxlength="255">
+  <input type="hidden" id="lat" name="lat" value="0">
+  <input type="hidden" id="long" name="long" value="0">
+  <input type="submit" name="submit" value="Let's chat about it">
+</form>
 
-						$("#status").text(feature + ", " + state);
-					}
-				}
-			});
- 
-		</script> 
+<p id="status">This is a status</p>
+</div>
 
-		<p id="status">This is a status</p>
-
-		<div id="main">
-			<form method="get" action="/">
-				<label for="topic">What's your fancy?</label>
-				<input type="text" name="topic" id="topic" size="25" maxlength="255">
-				<input type="hidden" id="lat" name="lat" value="0">
-				<input type="hidden" id="long" name="long" value="0">
-				<input type="submit" name="submit" value="Let's chat about it">
-			</form>
-		</div>
-	</body> 
+</body> 
 </html> 
