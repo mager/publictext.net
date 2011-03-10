@@ -2,10 +2,13 @@
 <html>
   <head>
     <style media="screen" type="text/css"> 
-      @import "../style.css";
-    </style> 
+      @import "../css/style.css";
+    </style>
+    <script type="text/javascript" src="../js/polymaps.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 	<script src="http://cdn.simplegeo.com/js/1.2/simplegeo.context.jq.min.js"></script>
+	<script type="text/javascript" src="http://use.typekit.com/gqn6xcl.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
 
 <body class="landing"> 
@@ -25,11 +28,14 @@
         } else {
           var coords = position.coords;
           $("#lat").val(coords.latitude);
-          $("#long").val(coords.longitude);
+          $("#lon").val(coords.longitude);
+          map.center({lat: coords.latitude, lon: coords.longitude});
           client.getContext(coords.latitude, coords.longitude, hood);
       }
     }
-				
+		
+	/* Callback function
+	--------------------------- */		
     function hood(err, data) {
       if (err) {
         $("#status").text("Unable to load location info: " + err);
@@ -37,29 +43,39 @@
         var featureMap = {};
         $.each(data.features, function(i, feature) { featureMap[feature.classifiers[0].category] = feature.name })
         var feature = featureMap['Neighborhood'] || featureMap['Postal Code'];
+        var handle = "" // We need to grab the handle from the JSON response for the 
         var city = featureMap['Municipal'];
         var state = featureMap['Subnational'];
         $("#status").text(feature + ", " + city + ", " + state);
       }
     }
+
+  /* TODO: If we can't get the user's location, ask them to enter their zipcode */
+
+  /* QUESTION: Need onsubmit function or will the form just submit?? */
+
   });
 
 </script> 
 
 <div class="width">
+	
 <h1>Public<span>Text</span></h1>
 
 <h2>What's your fancy?</h2>
 
-<form method="get" action="/">
-  <input type="text" name="topic" id="topic" size="25" maxlength="255">
-  <input type="hidden" id="lat" name="lat" value="0">
-  <input type="hidden" id="long" name="long" value="0">
-  <input type="submit" name="submit" value="Let's chat about it">
-</form>
-
-<p id="status">This is a status</p>
+<div id="topic">
+  <form method="get" action="/">
+    <input type="text" name="topic" id="input-topic" size="25" maxlength="40" />
+	<p id="location">Locating you...</p>
+	<div id="map"><script type="text/javascript" src="../js/polymaps-landing.js"></script></div>
+    <input type="hidden" id="lat" name="lat" value="0" />
+    <input type="hidden" id="lon" name="long" value="0" />
+    <p><input type="submit" name="submit" value="Let's chat about it" /></p>
+  </form>
 </div>
+
+</div><!-- /width -->
 
 </body> 
 </html> 
