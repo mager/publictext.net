@@ -43,23 +43,31 @@
       } else {
         var featureMap = {};
 		$.each(data.features, function(i, feature) { featureMap[feature.classifiers[0].category] = feature });
-
 		var feature = featureMap['Neighborhood'] || featureMap['Postal Code'];
         var name = feature.name;
 		var handle = feature.handle.substring(0, 25);
         $("#handle").val(handle);
-        var city = featureMap['Municipal'].name;
-        var state = featureMap['Subnational'].name;
+
+		var city, state = "";
+
+		if (jQuery.inArray('Municipal', featureMap) >= 0)
+		{
+			city = featureMap['Municipal'].name;
+		}
+	
+		if (jQuery.inArray('Subnational', featureMap) >= 0)
+		{
+			state = featureMap['Subnational'].name;
+		}
+			
         var location = "We've located you in " + feature;
 
-        if (city != null) {
-	        location += " " + city;
-        }
-
         if (data.source === 'simplegeo') {
-          $("#location").text("We've located you in " + feature + ", " + city + ", " + state);
+	      // Better, more specific HTML5 location
+          $("#location").text("We've located you in " + name + ", " + city + ", " + state);
         } else {
-	      $("#location").text("We've located you in fuzzy");
+	      // Falls back on GeoIP
+		  $("#location").text("We've located you in FUZZY " + name + ", " + city + ", " + state);
 	    }
       }
     }
@@ -78,9 +86,14 @@
 	
 <h1 class="logo">Public<span>Text</span></h1>
 
-<h2>What's your fancy?</h2>
+<?php
+	$questions = array("What are you thinking about?","What’s your current obsession?","What do you want?","What’s your expertise?","What’s your fancy?","Where do you want to go?","Why are you here?","Who do you know?","What is you passion?","What do you want to learn about?","What do you want to do today?","What do you want to do right now?","What is it time for?","What do you want to play with?","What do you want to explore?","What do you have time for?","What have you always wanted to do?","My wish today is...","Want to have fun?","Let’s collaborate on...","Want to learn how to?","What are you craving?","Want to make new friends?","Want to try something new today?", "What do you want to play?");
+	$questions = array_rand($qs);
+?>
 
-<div id="topic">
+<h2><?php echo $qs[$q]; ?></h2>
+
+<div id="form">
   <form method="post" action="pubtxt.php">
     <input type="text" name="topic" id="topic" size="25" maxlength="40" />
     <p><input type="submit" name="submit" value="Let's chat about it" /></p>

@@ -1,0 +1,4 @@
+<?php
+$questions = array("What are you thinking about?","What’s your current obsession?","What do you want?","What’s your expertise?","What’s your fancy?","Where do you want to go?","Why are you here?","Who do you know?","What is you passion?","What do you want to learn about?","What do you want to do today?","What do you want to do right now?","What is it time for?","What do you want to play with?","What do you want to explore?","What do you have time for?","What have you always wanted to do?","My wish today is...","Want to have fun?","Let’s collaborate on...","Want to learn how to?","What are you craving?","Want to make new friends?","Want to try something new today?", "What do you want to play?");
+$questions = array_rand($qs);
+?>

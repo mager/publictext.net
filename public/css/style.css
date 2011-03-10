@@ -22,10 +22,11 @@ a {color:#573369;}
 .landing .width {width:400px;text-align:center;}
 .landing #topic {width:380px;border:1px solid #7ED19B;display:block;font-family: "anonymous-pro-1","anonymous-pro-2";font-size:140%;padding:10px 6px;}
 .landing #submit-topic {font-size:125%;}
-.landing #map {width:380px;min-height:300px;border:1px solid #7ED19B}
+.landing #map {width:380px;min-height:300px;border:1px solid #7ED19B;min-height:200px;}
+.landing #location {background: url('../images/pin.png') no-repeat 0 0;padding:24px 0 0 44px;text-align:left;font-size:1.2em;font-style:italic;}
 
 /* pubtxt topic page */
-.topic-page .logo {text-align:left;font-size:2em;}
+.topic-page .logo {text-align:left;font-size:2em;margin-top:2px;}
 .topic-page .logo a {text-decoration:none;color:#000;}
 .topic-page .logo a span {color:#5733690;}
 .topic-page #header {background-color:#7ED19B;border-top:4px solid #358A5C;}
