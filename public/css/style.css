@@ -20,12 +20,12 @@ a {color:#573369;}
 
 /* landing page */
 .landing .width {width:400px;text-align:center;}
-.landing #input-topic {width:380px;border:1px solid #7ED19B;display:block;font-family: "anonymous-pro-1","anonymous-pro-2";font-size:140%;padding:10px 6px;}
+.landing #topic {width:380px;border:1px solid #7ED19B;display:block;font-family: "anonymous-pro-1","anonymous-pro-2";font-size:140%;padding:10px 6px;}
 .landing #submit-topic {font-size:125%;}
-.landing #map {width:380px;border:1px solid #7ED19B}
+.landing #map {width:380px;min-height:300px;border:1px solid #7ED19B}
 
 /* pubtxt topic page */
-.topic-page .logo {text-align:left;font-size:3em;}
+.topic-page .logo {text-align:left;font-size:2em;}
 .topic-page .logo a {text-decoration:none;color:#000;}
 .topic-page .logo a span {color:#5733690;}
 .topic-page #header {background-color:#7ED19B;border-top:4px solid #358A5C;}
