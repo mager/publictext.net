@@ -1,5 +1,7 @@
 body {background-color:#E3EBB7;color:#333;margin:0;padding:0;}
 
+.follow-us {text-align:center;margin:10px auto;width:400px;}
+
 /* Text */
 h1 {font:italic 5.2em Georgia;text-align:center;color:#333;margin:10px;}
 h1 span {font-style:normal;color:#573369;}
