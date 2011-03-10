@@ -2,7 +2,7 @@
 <html>
 <head>
 <style media="screen" type="text/css">
-    @import "style.css";
+    @import "css/style.css";
 </style>
 <title>PublicText - Public, group chat about compelling topics limited to your specific neighborhood or zip code.</title>
 <link rel="stylesheet" href="http://launchrock.com/api/lr.api.0.2.css">

@@ -16,6 +16,7 @@ a {color:#573369;}
 
 /* Layout */
 .width {width:980px;margin:0 auto;font-family: "anonymous-pro-1","anonymous-pro-2";}
+.landing .width {width:400px;text-align:center;}
 
 /* Header */
 
@@ -28,6 +29,7 @@ a {color:#573369;}
 .topic-page .pubtxt {text-align:center;}
 .topic-page #map {border:1px solid red;}
 .topic-page #chats {border:1px solid red;}
+
 
 
 
