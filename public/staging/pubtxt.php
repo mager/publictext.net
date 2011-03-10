@@ -2,7 +2,20 @@
 
 $now = (int)gmdate('U');
 
+if ($_POST['entered-zip'] != '') {
+	$location = $_POST['entered-zip'];
+} else {
+	$location = $_POST['location'];
+}
+
+$lat = $_POST['lat'];
+$lon = $_POST['lon'];
+$handle = $_POST['handle'];
+$topic = urlencode($_POST['topic']);
+
+$pageID = $handle . '-' . $topic;
 //include(add_sg_record.php);
+
 
 ?>
 
@@ -39,18 +52,42 @@ $now = (int)gmdate('U');
 </div>
 
 <div class="width">
-<h2 class="pubtxt">#pizza in North Beach, San Francisco, CA</h2>
-<p>This is a paragraph.</p>
-
-<?php echo $lat; ?>
+<h2 class="pubtxt">#<?php echo $topic; ?> in North Beach, San Francisco, CA</h2>
 
 <div id="main">
 
-	<div id="map"><script type="text/javascript" src="../js/polymaps-landing.js"></script></div>
+<div id="map"><script type="text/javascript" src="../js/polymaps-landing.js"></script></div>
 
-  <div id="chats">
-
-  </div>
+<div id="chat">
+<ul>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>
+	<li>Hi</li>
+	<li>Oh. Hi.</li>	
+</ul>
+</div>
 
 </div>
 
