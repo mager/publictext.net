@@ -1,4 +1,4 @@
-body {background-color:#E3EBB7;color:#333;margin:0;padding:0;}
+body {background-color:#E3EBB7;color:#333;margin:0;padding:0 0 40px;}
 
 .follow-us {text-align:center;margin:10px auto;width:400px;}
 
@@ -8,6 +8,7 @@ h1 span {font-style:normal;color:#573369;}
 h2 {font-size:2.2em;color:#1C2D2E;}
 p {font-size: 1.1em;}
 a {color:#573369;}
+
 
 /* LaunchRock shiz */
 #container {margin:0 auto;width:380px;}
@@ -19,11 +20,12 @@ a {color:#573369;}
 
 
 /* landing page */
+.landing {border-top:4px solid #358A5C;}
 .landing .width {width:400px;text-align:center;}
 .landing #topic {width:380px;border:1px solid #7ED19B;display:block;font-family: "anonymous-pro-1","anonymous-pro-2";font-size:140%;padding:10px 6px;}
 .landing #submit-topic {font-size:125%;}
 .landing #map {width:380px;height:300px;border:1px solid #7ED19B;}
-.landing #location {background: url('../images/pin.png') no-repeat 0 0;padding:24px 0 0 44px;text-align:left;font-size:1.2em;font-style:italic;}
+.landing #locating {background: url('../images/pin.png') no-repeat 0 0;padding:24px 0 0 44px;text-align:left;font-size:1.2em;font-style:italic;}
 
 /* pubtxt topic page */
 .topic-page .logo {text-align:left;font-size:2em;margin-top:2px;}
